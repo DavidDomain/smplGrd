@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		files: {
@@ -9,16 +9,16 @@ module.exports = function(grunt) {
 			dev: ['dev/styles/smpl-grd.css', 'dev/styles/smpl-grd.css.map'],
 			build: ['build/smpl-grd.min.css']
 		},
-    less: {
+		less: {
 			development: {
 				options: {
 					banner: '/*\n' +
-									' * <%= pkg.name %> - v<%= pkg.version %>\n' +
-									' * <%= pkg.repository.url %>\n' +
-									' * <%= grunt.template.today(\"yyyy-mm-dd\") %>\n' +
-									' * Author: <%= pkg.author %>\n' +
-									' * Licensed under the <%= pkg.license %> license.\n' +
-									' */',
+						' * <%= pkg.name %> - v<%= pkg.version %>\n' +
+						' * <%= pkg.repository.url %>\n' +
+						' * <%= grunt.template.today(\"yyyy-mm-dd\") %>\n' +
+						' * Author: <%= pkg.author %>\n' +
+						' * Licensed under the <%= pkg.license %> license.\n' +
+						' */',
 					syncImport: true,
 					sourceMap: true,
 					outputSourceFiles: true,
@@ -27,15 +27,14 @@ module.exports = function(grunt) {
 						"columns": "12"
 					}
 				},
-        files: {
+				files: {
 					'dev/styles/smpl-grd.css': '<%= files.less %>'
-        }
+				}
 			}
-    },
+		},
 		csslint: {
 			strict: {
-				options: {
-				},
+				options: {},
 				src: ['<%= files.css %>']
 			},
 			laxed: {
@@ -62,10 +61,12 @@ module.exports = function(grunt) {
 		watch: {
 			less: {
 				files: ['dev/styles/less/*.less'],
-				tasks: ['less:development', 'csslint:laxed', 'cssmin']		
+				tasks: ['less:development', 'csslint:laxed', 'cssmin']
 			},
 			livereload: {
-				options: { livereload: true},
+				options: {
+					livereload: true
+				},
 				files: ['dev/**/*']
 			}
 		},
@@ -83,5 +84,5 @@ module.exports = function(grunt) {
 	});
 	grunt.loadTasks("tasks");
 	require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['clean', 'less:development', 'csslint:laxed', 'cssmin', 'server', 'open', 'watch']);
+	grunt.registerTask('default', ['clean', 'less:development', 'csslint:laxed', 'cssmin', 'server', 'open', 'watch']);
 };

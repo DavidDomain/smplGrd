@@ -1,21 +1,23 @@
 .make-grid-columns(@class, @offset: false) {
+	@item: ~"col-@{class}-";
+	.create-columns-loop (@index, @item) when (@index <=@columns) and (@offset =false) {
+		.@{item}@{index} {
+			width: (100 /@columns ) *@index * 1%;
+		}
+		.create-columns-loop((@index + 1),
+		@item);
 
-  @item: ~"col-@{class}-";
+	}
+	.create-columns-loop (@index, @item) when (@index <=@columns) and (@offset =true) {
+		.@{item}@{index}-offset {
+			margin-left: percentage((@index /@columns));
 
-  .create-columns-loop (@index, @item) when (@index <= @columns) and (@offset = false) {
-    .@{item}@{index} {
-      width: ( 100 / @columns ) * @index * 1%;
-    }
-    .create-columns-loop( (@index + 1), @item);
-  }
+		}
+		.create-columns-loop((@index + 1),
+		@item);
 
-.create-columns-loop (@index, @item) when (@index <= @columns) and (@offset = true) {
-  .@{item}@{index}-offset {
-    margin-left: percentage((@index / @columns));
-  }
-  .create-columns-loop( (@index + 1), @item);
-}
-
-  .create-columns-loop (1, @item);
+	}
+	.create-columns-loop (1,
+	@item);
 
 }
