@@ -45,7 +45,9 @@ Works in all modern browsers. To support IE8 respond.js and html5shiv.js is requ
 
 ## Notes
 To use the Grunt.js config file just run:
-		% npm install
-		
+```
+% npm install
+```
+
 ## License
 smplGrd is licensed under the [MIT License](http://opensource.org/licenses/MIT).
