@@ -1,0 +1,39 @@
+{
+  "name": "smpl-grd",
+  "version": "0.1.0",
+  "homepage": "https://github.com/DavidDomain/smplGrd",
+  "authors": [
+    "DavidDomain <info@david-domain.com>"
+  ],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DavidDomain/smplGrd"
+	},
+  "description": "Just another simple, responsive, mobile first, nestable css grid system build with less.",
+  "main": "Gruntfile.js",
+  "keywords": [
+    "less",
+    "css",
+    "grid-system"
+  ],
+  "devDependencies": {
+    "compression": "^1.2.2",
+    "express": "^4.10.6",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-csslint": "^0.3.1",
+    "grunt-contrib-cssmin": "^0.11.0",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-open": "^0.2.3",
+    "matchdep": "^0.3.0"
+  }
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
